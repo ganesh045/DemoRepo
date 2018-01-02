@@ -1,5 +1,6 @@
 package com.finaptics.entity;
 
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -25,6 +26,10 @@ public class Mobile {
 	@Column(name="bname")
 	private String brandName;
 	
+	@Column(name="date")
+	private Date marketEntryDate;
+	
+	
 	@JsonIgnore
 	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="mobile_user",joinColumns=@JoinColumn(name="mobile_id"),inverseJoinColumns=@JoinColumn(name="user_id"))
@@ -41,12 +46,22 @@ public class Mobile {
 		
 	}
 
-	public int getMobile_id() {
+	
+	
+	public int getMobileId() {
 		return mobileId;
 	}
 
-	public void setMobile_id(int mobile_id) {
-		this.mobileId = mobile_id;
+	public void setMobileId(int mobileId) {
+		this.mobileId = mobileId;
+	}
+
+	public Date getMarketEntryDate() {
+		return marketEntryDate;
+	}
+
+	public void setMarketEntryDate(Date marketEntryDate) {
+		this.marketEntryDate = marketEntryDate;
 	}
 
 	public String getBrandName() {
@@ -65,6 +80,8 @@ public class Mobile {
 		this.users = users;
 	}
 
+	
+	
 	@Override
 	public String toString() {
 		return "Mobile [mobile_id=" + mobileId + ", brandName=" + brandName + ", users=" + users + "]";

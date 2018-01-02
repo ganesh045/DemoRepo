@@ -1,5 +1,8 @@
 package com.finaptics.repo;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +43,16 @@ public class ApplicationService {
 	public User findUserByUserMail(String emial) {
 		
 		return userRepository.findUserByUserMail(emial);
+	}
+	
+	public Mobile getMobileBymarketEntryDate(Date date) {
+		
+		return mobileRepository.getMobileBymarketEntryDate(date);
+	}
+	
+	public List<Mobile> getMobileBymarketEntryDateBetween(Date date1,Date date2){
+		
+		return mobileRepository.getMobileByMarketEntryDateBetween(date1, date2);
 	}
 	
 	/*

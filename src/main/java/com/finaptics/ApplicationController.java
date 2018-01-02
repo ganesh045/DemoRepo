@@ -1,6 +1,8 @@
 package com.finaptics;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,6 +55,26 @@ public class ApplicationController {
 	public LocalDateTime findTime() {
 		return LocalDateTime.now();
 	}
+	@GetMapping("/getmobilebydate/{date}")
+	public Mobile getMobileBymarketEntryDate(@PathVariable Date date) {
+		
+		return service.getMobileBymarketEntryDate(date);
+	}
+	
+	@GetMapping("/getmobilebydate2")
+	public List<Mobile> collecting() {
+		
+		Date date1=service.findOneObject(1).getMarketEntryDate();
+		Date date2=service.findOneObject(4).getMarketEntryDate();
+		
+		return 	service.getMobileBymarketEntryDateBetween(date1, date2);
+		
+	}
+	
+	
+	
+	
+	
 	/*
 	@PostMapping("/saveusers")
 	public void save2() {
