@@ -30,6 +30,10 @@ public class Mobile {
 	@JoinTable(name="mobile_user",joinColumns=@JoinColumn(name="mobile_id"),inverseJoinColumns=@JoinColumn(name="user_id"))
 	private Set<User> users;
 
+	protected Mobile() {
+		
+	}
+	
 	public Mobile(int id, String name) {
 		
 		this.mobileId=id;
