@@ -41,6 +41,12 @@ public class ApplicationController {
 		return service.findOneObject(id);
 	}
 	
+	@GetMapping("/getuser/{email:.+}")
+	public User findUserByUserMail(@PathVariable String email) {
+		
+		return service.findUserByUserMail(email);
+	}
+	
 	/*
 	@PostMapping("/saveusers")
 	public void save2() {

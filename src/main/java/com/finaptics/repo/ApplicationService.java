@@ -37,6 +37,11 @@ public class ApplicationService {
 		return mobileRepository.findOne(id);
 	}
 	
+	public User findUserByUserMail(String emial) {
+		
+		return userRepository.findUserByUserMail(emial);
+	}
+	
 	/*
 	public void save2() {
 		

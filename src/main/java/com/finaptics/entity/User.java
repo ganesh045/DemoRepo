@@ -21,6 +21,12 @@ public class User {
 	@Column(name="uname")
 	private String userName;
 	
+	@Column(name="mail")
+	private String userMail;
+	
+	@Column(name="loc")
+	private String location;
+	
 	@ManyToMany(cascade=CascadeType.ALL,mappedBy="users")
 	private Set<Mobile> mobiles;
 
@@ -55,6 +61,24 @@ public class User {
 
 	public void setMobiles(Set<Mobile> mobiles) {
 		this.mobiles = mobiles;
+	}
+	
+	
+
+	public String getUserMail() {
+		return userMail;
+	}
+
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 	@Override
