@@ -24,6 +24,10 @@ public class User {
 	@ManyToMany(cascade=CascadeType.ALL,mappedBy="users")
 	private Set<Mobile> mobiles;
 
+	protected User() {
+		
+	}
+	
 	public User(int id,String userName) {
 		this.userId=id;
 		this.userName=userName;
@@ -53,10 +57,10 @@ public class User {
 		this.mobiles = mobiles;
 	}
 
-	/*@Override
+	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", mobiles=" + mobiles + "]";
-	}*/
+	}
 
 	
 }
