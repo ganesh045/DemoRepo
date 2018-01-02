@@ -1,5 +1,7 @@
 package com.finaptics;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,6 +49,10 @@ public class ApplicationController {
 		return service.findUserByUserMail(email);
 	}
 	
+	@GetMapping("/localdatetime")
+	public LocalDateTime findTime() {
+		return LocalDateTime.now();
+	}
 	/*
 	@PostMapping("/saveusers")
 	public void save2() {
