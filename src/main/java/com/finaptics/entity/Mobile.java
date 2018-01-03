@@ -1,6 +1,6 @@
 package com.finaptics.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -27,7 +27,7 @@ public class Mobile {
 	private String brandName;
 	
 	@Column(name="date")
-	private Date marketEntryDate;
+	private LocalDate marketEntryDate;
 	
 	
 	@JsonIgnore
@@ -39,11 +39,11 @@ public class Mobile {
 		
 	}
 	
-	public Mobile(int id, String name) {
+	public Mobile(int id, String name,LocalDate date) {
 		
 		this.mobileId=id;
 		this.brandName=name;
-		
+		this.marketEntryDate=date;
 	}
 
 	
@@ -56,11 +56,11 @@ public class Mobile {
 		this.mobileId = mobileId;
 	}
 
-	public Date getMarketEntryDate() {
+	public LocalDate getMarketEntryDate() {
 		return marketEntryDate;
 	}
 
-	public void setMarketEntryDate(Date marketEntryDate) {
+	public void setMarketEntryDate(LocalDate marketEntryDate) {
 		this.marketEntryDate = marketEntryDate;
 	}
 

@@ -1,5 +1,6 @@
 package com.finaptics.entity;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -27,6 +28,9 @@ public class User {
 	@Column(name="loc")
 	private String location;
 	
+	@Column(name="date")
+	private LocalDate purchasedDate;
+	
 	@ManyToMany(cascade=CascadeType.ALL,mappedBy="users")
 	private Set<Mobile> mobiles;
 
@@ -34,9 +38,12 @@ public class User {
 		
 	}
 	
-	public User(int id,String userName) {
+	public User(int id,String name,String mail,String loc,LocalDate date) {
 		this.userId=id;
-		this.userName=userName;
+		this.userName=name;
+		this.userMail=mail;
+		this.location=loc;
+		this.purchasedDate=date;
 	}
 	
 	public int getUserId() {
@@ -79,6 +86,15 @@ public class User {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	
+	public LocalDate getPurchasedDate() {
+		return purchasedDate;
+	}
+
+	public void setPurchasedDate(LocalDate purchasedDate) {
+		this.purchasedDate = purchasedDate;
 	}
 
 	@Override

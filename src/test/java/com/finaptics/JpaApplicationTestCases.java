@@ -43,7 +43,7 @@ public class JpaApplicationTestCases extends JpaRelationships2ApplicationTests {
 		mockMvc=MockMvcBuilders.standaloneSetup(controller).build();
 	}
 	
-	@Ignore
+	/*@Ignore
 	@Test
 	public void testFindAll() throws Exception {
 		
@@ -61,8 +61,8 @@ public class JpaApplicationTestCases extends JpaRelationships2ApplicationTests {
 	@Test
 	public void testFindObject() throws Exception {
 		
-		/*List<User> users=Arrays.asList(new User(1,"kabali"),new User(2,"Bahubali"));
-		*/
+		List<User> users=Arrays.asList(new User(1,"kabali"),new User(2,"Bahubali"));
+		
 		Mobile mobile =new Mobile(1,"Moto");
 		when(service.findOneObject(1)).thenReturn(mobile);
 		
@@ -73,5 +73,5 @@ public class JpaApplicationTestCases extends JpaRelationships2ApplicationTests {
 				
 	//	fail("Not yet implemented");
 	}
-
+*/
 }

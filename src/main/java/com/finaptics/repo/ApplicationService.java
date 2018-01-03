@@ -1,6 +1,6 @@
 package com.finaptics.repo;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,17 +40,17 @@ public class ApplicationService {
 		return mobileRepository.findOne(id);
 	}
 	
-	public User findUserByUserMail(String emial) {
+	public User findUserByUserMail(String email) {
 		
-		return userRepository.findUserByUserMail(emial);
+		return userRepository.findUserByUserMail(email);
 	}
 	
-	public Mobile getMobileBymarketEntryDate(Date date) {
+	public Mobile getMobileBymarketEntryDate(LocalDate date) {
 		
 		return mobileRepository.getMobileBymarketEntryDate(date);
 	}
 	
-	public List<Mobile> getMobileBymarketEntryDateBetween(Date date1,Date date2){
+	public List<Mobile> getMobileBymarketEntryDateBetween(LocalDate date1,LocalDate date2){
 		
 		return mobileRepository.getMobileByMarketEntryDateBetween(date1, date2);
 	}
